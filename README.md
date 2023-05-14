@@ -6,7 +6,7 @@ Here you can find explanations of all functions that I used to solve this assign
 
 ### hash
 
-**Description:** 
+**Description:** This method takes a key as input, converting it to a string, and calculateing a hash code by summing the values of its characters. It returns remainder of hascode, where M is the size of the hash table
 
 **Solution:** 
 
@@ -23,7 +23,7 @@ private int hash(K key) {
 
 ### put
 
-**Description:** 
+**Description:** This method adds key value pair to the hash table or updates it. It first calculates the index of the bucket using the hash method, then iterates over the linked list at that index to check if the key already exists. If it does, the method updates the value and returns. Otherwise, it creates a new HashNode object.
 
 **Solution:** 
 
@@ -44,7 +44,7 @@ private int hash(K key) {
 
 ### get
 
-**Description:** 
+**Description:** This method extracts the value with a given key from the hash table by iterating over the linked list at the index corresponding to the key's hash code. If the key is found, its associated value is returned. If not, it returns null.
 
 **Solution:** 
 
