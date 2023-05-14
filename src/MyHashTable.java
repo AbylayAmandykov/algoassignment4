@@ -80,7 +80,17 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
-    public boolean contains(V value) {}
+    public boolean contains(V value) {
+        for (int i = 0; i < M; i++) {
+            LinkedList<HashNode<K, V>> list = chain[i];
+            for (HashNode<K, V> node : list) {
+                if (node.getValue().equals(value)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public K getKey(V value) {}
     public int getSize() {
         return size;
