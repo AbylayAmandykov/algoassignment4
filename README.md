@@ -63,12 +63,24 @@ private int hash(K key) {
 
 ### remove
 
-**Description:** 
+**Description:** This method removes a key value from the hash table by looking for the keys corresponding node in the linked list at its index and then removing it. If the key is not found, it returns null.
 
 **Solution:** 
 
 ```java
- 
+public V remove(K key) {
+  int index = hash(key);
+  LinkedList<HashNode<K, V>> list = chain[index];
+  for (HashNode<K, V> node : list) {
+    if (node.getKey().equals(key)) {
+       V value = node.getValue();
+       list.remove(node);
+       size--;
+       return value;
+     }
+   }
+   return null;
+ } 
 ```
 
 ### contains
