@@ -85,21 +85,41 @@ public V remove(K key) {
 
 ### contains
 
-**Description:** 
+**Description:** This method checks if a value exists in the hash table by iterating over all nodes in the hash table and returning true if the value is found, false otherwise.
 
 **Solution:** 
 
 ```java
- 
+public boolean contains(V value) {
+  for (int i = 0; i < M; i++) {
+    LinkedList<HashNode<K, V>> list = chain[i];
+    for (HashNode<K, V> node : list) {
+      if (node.getValue().equals(value)) {
+         return true;
+      }
+     }
+   }
+   return false;
+} 
 ```
 
 ### getKey
 
-**Description:** 
+**Description:** This method searches the hash table for the specified value and returns that key if found, otherwise returns null.
 
 **Solution:** 
 
 ```java
- 
+public K getKey(V value) {
+  for (int i = 0; i < M; i++) {
+    LinkedList<HashNode<K, V>> list = chain[i];
+    for (HashNode<K, V> node : list) {
+       if (node.getValue().equals(value)) {
+           return node.getKey();
+       }
+     }
+   }
+  return null;
+ } 
 ```
 
