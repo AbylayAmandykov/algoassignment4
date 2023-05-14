@@ -67,7 +67,19 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
-    public V remove(K key) {}
+    public V remove(K key) {
+        int index = hash(key);
+        LinkedList<HashNode<K, V>> list = chain[index];
+        for (HashNode<K, V> node : list) {
+            if (node.getKey().equals(key)) {
+                V value = node.getValue();
+                list.remove(node);
+                size--;
+                return value;
+            }
+        }
+        return null;
+    }
     public boolean contains(V value) {}
     public K getKey(V value) {}
     public int getSize() {
