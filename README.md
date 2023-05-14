@@ -49,7 +49,16 @@ private int hash(K key) {
 **Solution:** 
 
 ```java
- 
+ public V get(K key) {
+   int index = hash(key);
+   LinkedList<HashNode<K, V>> list = chain[index];
+   for (HashNode<K, V> node : list) {
+      if (node.getKey().equals(key)) {
+         return node.getValue();
+      }
+   }
+   return null;
+ } 
 ```
 
 ### remove
@@ -82,12 +91,3 @@ private int hash(K key) {
  
 ```
 
-### getSize
-
-**Description:** 
-
-**Solution:** 
-
-```java
- 
-```
