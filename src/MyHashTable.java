@@ -30,7 +30,12 @@ public class MyHashTable<K, V> {
     public LinkedList<HashNode<K, V>>[] chain;
     public int M = 11;
     public int size;
-    public MyHashTable() {}
+    public MyHashTable() {
+        this.chain = new LinkedList[M];
+        for (int i = 0; i < M; i++) {
+            chain[i] = new LinkedList<>();
+        }
+    }
     public MyHashTable(int M) {}
     private int hash(K key) {}
     public void put(K key, V value) {}
