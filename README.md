@@ -34,7 +34,7 @@ private int hash(K key) {
    for (HashNode<K, V> node : list) {
        if (node.getKey().equals(key)) {
            node.setValue(value);
-              return;
+           return;
        }
    }
    list.add(new HashNode<K, V>(key, value));
