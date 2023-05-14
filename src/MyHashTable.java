@@ -1,5 +1,4 @@
 import java.util.LinkedList;
-
 public class MyHashTable<K, V> {
     private class HashNode<K, V> {
         private K key;
@@ -36,7 +35,13 @@ public class MyHashTable<K, V> {
             chain[i] = new LinkedList<>();
         }
     }
-    public MyHashTable(int M) {}
+    public MyHashTable(int M) {
+        this.M = M;
+        this.chain = new LinkedList[M];
+        for (int i = 0; i < M; i++) {
+            chain[i] = new LinkedList<>();
+        }
+    }
     private int hash(K key) {}
     public void put(K key, V value) {}
     public V get(K key) {}
