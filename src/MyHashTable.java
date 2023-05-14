@@ -91,7 +91,17 @@ public class MyHashTable<K, V> {
         }
         return false;
     }
-    public K getKey(V value) {}
+    public K getKey(V value) {
+        for (int i = 0; i < M; i++) {
+            LinkedList<HashNode<K, V>> list = chain[i];
+            for (HashNode<K, V> node : list) {
+                if (node.getValue().equals(value)) {
+                    return node.getKey();
+                }
+            }
+        }
+        return null;
+    }
     public int getSize() {
         return size;
     }
