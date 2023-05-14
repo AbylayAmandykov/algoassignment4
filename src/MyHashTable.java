@@ -50,5 +50,7 @@ public class MyHashTable<K, V> {
     public V remove(K key) {}
     public boolean contains(V value) {}
     public K getKey(V value) {}
-
+    public int getSize() {
+        return size;
+    }
 }
