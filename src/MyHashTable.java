@@ -45,7 +45,18 @@ public class MyHashTable<K, V> {
         }
         return hashCode % M;
     }
-    public void put(K key, V value) {}
+    public void put(K key, V value) {
+        int index = hash(key);
+        LinkedList<HashNode<K, V>> list = chain[index];
+        for (HashNode<K, V> node : list) {
+            if (node.getKey().equals(key)) {
+                node.setValue(value);
+                return;
+            }
+        }
+        list.add(new HashNode<K, V>(key, value));
+        size++;
+    }
     public V get(K key) {}
     public V remove(K key) {}
     public boolean contains(V value) {}
