@@ -30,7 +30,7 @@ public class Main {
             hashTable.put(key, i);
         }
         for (int i = 0; i < hashTable.M; i++) {
-            System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
+//            System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
         }
     }
 }

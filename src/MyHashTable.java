@@ -114,7 +114,17 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+    // getting size
     public int getSize() {
         return size;
+    }
+    public void replace(K key, V oldValue, V newValue) {
+        for(LinkedList<HashNode<K, V>> list : chain) {
+            for(HashNode<K, V> node : list) {
+               if(node.getKey().equals(key) && node.getValue().equals(oldValue)) {
+                   node.setValue(newValue);
+               }
+            }
+        }
     }
 }
