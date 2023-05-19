@@ -29,8 +29,13 @@ public class Main {
             MyTestingClass key = new MyTestingClass(rand.nextInt(100), "Name" + i);
             hashTable.put(key, i);
         }
+        MyTestingClass replace = new MyTestingClass(55, "Abylay");
+        int oldValue = 55;
+        int newValue = 99;
+        hashTable.replace(replace, oldValue, newValue);
         for (int i = 0; i < hashTable.M; i++) {
-//            System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
+           System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
         }
+
     }
 }
