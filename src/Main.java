@@ -30,12 +30,14 @@ public class Main {
             hashTable.put(key, i);
         }
         MyTestingClass replace = new MyTestingClass(55, "Abylay");
+        hashTable.put(replace, 55);
         int oldValue = 55;
         int newValue = 99;
         hashTable.replace(replace, oldValue, newValue);
-        for (int i = 0; i < hashTable.M; i++) {
-           System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
-        }
+        System.out.println(hashTable.get(replace));
+//        for (int i = 0; i < hashTable.M; i++) {
+//           System.out.println("Bucket " + i + ": " + hashTable.chain[i].size());
+//        }
 
     }
 }
